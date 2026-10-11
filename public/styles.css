@@ -1,0 +1,291 @@
+/* Binary Companion — TimeTug-inspired design system
+   cream #fff8f0 · ink #1c2954 · orange #ffb03b · red-orange #ff6b4a · blue #2e7af5 */
+
+:root {
+  --cream: #fff8f0;
+  --cream-deep: #fdefe2;
+  --ink: #1c2954;
+  --ink-soft: #3d4a75;
+  --orange: #ffb03b;
+  --orange-dark: #e89a1f;
+  --red-orange: #ff6b4a;
+  --blue: #2e7af5;
+  --card: #ffffff;
+  --line: #eadfce;
+  --radius: 20px;
+  --shadow: 0 10px 30px rgba(28, 41, 84, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* ---------- header ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 0;
+}
+
+.brand-mark {
+  font-size: 26px;
+  color: var(--orange-dark);
+  line-height: 1;
+}
+
+.brand-name {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+
+.brand-llc {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+  background: var(--card);
+}
+
+/* ---------- type ---------- */
+.kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red-orange);
+  margin-bottom: 14px;
+}
+
+.kicker-light { color: var(--orange); }
+
+h1, h2, h3 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(44px, 7vw, 72px); font-weight: 800; margin-bottom: 20px; }
+h2 { font-size: clamp(30px, 4.5vw, 44px); font-weight: 700; margin-bottom: 26px; }
+h3 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+
+.lede {
+  font-size: 20px;
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin-bottom: 28px;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 14px 30px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--ink);
+  box-shadow: 0 6px 0 var(--orange-dark);
+}
+
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 0 var(--orange-dark); }
+.btn-primary:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--orange-dark); }
+
+.btn-ghost {
+  background: var(--card);
+  color: var(--ink);
+  border: 2px solid var(--line);
+  margin-left: 12px;
+}
+
+.btn-ghost:hover { border-color: var(--ink); }
+
+/* ---------- cards ---------- */
+.card {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- hero ---------- */
+.hero { padding: 40px 0 72px; text-align: center; }
+
+.hero .lede { margin-left: auto; margin-right: auto; }
+
+.hero-cta { margin-bottom: 44px; }
+
+.hero-art {
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- services ---------- */
+.services { padding: 24px 0 72px; text-align: center; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: left;
+  margin-top: 8px;
+}
+
+.service-card {
+  padding: 26px 24px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+
+.service-card:hover { transform: translateY(-4px); }
+
+.top-bar {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bar, var(--blue));
+  margin: -26px -24px 20px;
+}
+
+.service-card p { color: var(--ink-soft); font-size: 15.5px; }
+
+/* ---------- about ---------- */
+.about { padding: 24px 0 72px; text-align: center; }
+
+.about-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 36px;
+  align-items: center;
+  padding: 36px;
+  text-align: left;
+}
+
+.about-dogs {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 2px solid var(--line);
+  background: var(--cream-deep);
+}
+
+.about-text p { margin-bottom: 16px; color: var(--ink-soft); }
+.about-text p:last-child { margin-bottom: 0; }
+.about-text strong { color: var(--ink); }
+.about-text a { color: var(--blue); font-weight: 600; }
+
+/* ---------- contact ---------- */
+.contact { padding: 24px 0 40px; }
+
+.contact-card {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  text-align: center;
+  padding: 56px 32px;
+}
+
+.contact-card h2 { color: #fff; }
+.contact-card p { color: #c9d2ee; margin-bottom: 28px; }
+
+/* ---------- footer ---------- */
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 2px solid var(--line);
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.footer-dogs { font-family: "JetBrains Mono", monospace; font-size: 12px; }
+
+/* ---------- stats ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 44px;
+}
+
+.stat {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 12px;
+  box-shadow: var(--shadow);
+}
+
+.stat-num {
+  display: block;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- apps ---------- */
+.apps { padding: 24px 0 72px; }
+
+.apps-card { padding: 40px 36px; }
+
+.apps-card h2 { margin-bottom: 14px; }
+.apps-card p { color: var(--ink-soft); max-width: 640px; }
+.apps-card a { color: var(--blue); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 760px) {
+  .cards { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .about-card { grid-template-columns: 1fr; padding: 28px; }
+  .about-dogs { max-width: 320px; margin: 0 auto; }
+  .btn-ghost { margin-left: 0; margin-top: 12px; }
+  .site-footer { flex-direction: column; gap: 8px; text-align: center; }
+}

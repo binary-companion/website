@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "binary-companion",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

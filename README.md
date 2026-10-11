@@ -16,6 +16,12 @@ accepts tokens from this repository's `production` environment, and that environ
 
 To preview locally: `cd public && python3 -m http.server 8000`.
 
+## Who can change `main`
+
+The `Protect main` ruleset requires a pull request, blocks force pushes and deletion, and restricts updates
+to the repository admin role (the owner). Anyone else contributes through a fork pull request, and only the
+owner can merge it. A merge to `main` deploys the site, so that is the only gate.
+
 ## Related
 
 - The TimeTug product site and policy pages live in <https://github.com/darkarena1/timetug> under `site/`.

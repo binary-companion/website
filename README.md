@@ -18,9 +18,13 @@ To preview locally: `cd public && python3 -m http.server 8000`.
 
 ## Who can change `main`
 
-The `Protect main` ruleset requires a pull request, blocks force pushes and deletion, and restricts updates
-to the repository admin role (the owner). Anyone else contributes through a fork pull request, and only the
-owner can merge it. A merge to `main` deploys the site, so that is the only gate.
+The `Protect main` ruleset requires a pull request and blocks force pushes and deletion. The owner is the
+only person with write access; anyone else contributes through a fork pull request, which only the owner can
+merge. A merge to `main` deploys the site, so that is the only gate.
+
+The "Restrict updates" rule is deliberately not enabled: it makes GitHub's auto-merge impossible (the admin
+must bypass it by hand on every merge) and adds nothing while there is a single writer. Turn it on, with the
+admin role as the only bypass actor, if a second writer is ever added.
 
 ## Related
 
